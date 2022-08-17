@@ -3,7 +3,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 @onready var aSprite:AnimatedSprite2D = $ASprite
-
+var last_direction:Vector2 = Vector2.ZERO
 # Get the gravity from the project settings to be synced with RigidDynamicBody nodes.
 var gravity = 0 #ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -18,8 +18,22 @@ func _physics_process(delta):
 	if direction:
 		#cuando hay movimiento
 		velocity = direction * SPEED
+		
+		if direction.x >0:
+			aSprite.animation = "walk_right"
+		elif direction.x <0:
+			aSprite.animation = "walk_left"
+		elif direction.y > 0:
+			aSprite.animation = "walk_down"
+		elif direction.y < 0:
+			aSprite.animation = "walk_up"
+		
+		last_direction = direction
 	else:
-		aSprite.animation = "default"
+		if last_direction.x < 0:
+			aSprite.animation = "static_left"
+		else:
+			aSprite.animation = "static_right"
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 

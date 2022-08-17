@@ -16,7 +16,10 @@ script = ExtResource("1_n5hk2")
 
 [node name="ASprite" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_6h27x")
+scale = Vector2(3.916, 3.916)
 frames = ExtResource("2_e5lub")
+animation = &"static_left"
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_qugxq")
