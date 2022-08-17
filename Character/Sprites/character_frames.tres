@@ -1,0 +1,31 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://bmtx8708h0p4r"]
+
+[ext_resource type="Texture2D" uid="uid://uh8803wwp4i2" path="res://icon.png" id="1_fssfs"]
+
+[resource]
+animations = [{
+"frames": [ExtResource("1_fssfs")],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
+}]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2800odyocs7p"]
+
+[ext_resource type="Script" path="res://Character/character.gd" id="1_n5hk2"]
+[ext_resource type="SpriteFrames" uid="uid://bmtx8708h0p4r" path="res://Character/Sprites/character_frames.tres" id="2_e5lub"]
+[ext_resource type="Shader" path="res://Character/Sprites/character_shader.gdshader" id="2_n6rcf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6h27x"]
+shader = ExtResource("2_n6rcf")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qugxq"]
+radius = 32.0
+height = 64.0
+
+[node name="Character" type="CharacterBody2D"]
+script = ExtResource("1_n5hk2")
+
+[node name="ASprite" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_6h27x")
+frames = ExtResource("2_e5lub")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_qugxq")
