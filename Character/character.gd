@@ -26,9 +26,11 @@ func _physics_process(_delta):
 		velocity = direction * SPEED + (direction*SPEED*dash_boost if dash.is_dashing() else Vector2.ZERO)
 		
 		if direction.x >0:
-			aSprite.animation = "walk_right"
+			aSprite.animation = "nuevo_derecha"
+			aSprite.flip_h = false
 		elif direction.x <0:
-			aSprite.animation = "walk_left"
+			aSprite.animation = "nuevo_derecha"
+			aSprite.flip_h = true
 		elif direction.y > 0:
 			aSprite.animation = "walk_down"
 		elif direction.y < 0:
@@ -37,9 +39,11 @@ func _physics_process(_delta):
 		last_direction = direction
 	else:  #Animaciones estáticas
 		if last_direction.x < 0:
-			aSprite.animation = "static_left"
+			aSprite.animation = "nuevo_estatico"
+			aSprite.flip_h = true
 		else:
-			aSprite.animation = "static_right"
+			aSprite.animation = "nuevo_estatico"
+			aSprite.flip_h = false
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 

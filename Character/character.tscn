@@ -15,15 +15,25 @@ height = 64.0
 [node name="Character" type="CharacterBody2D"]
 script = ExtResource("1_n5hk2")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = -25.0
+offset_top = -54.0
+offset_right = 44.0
+offset_bottom = 42.0
+color = Color(1, 0, 0.921569, 1)
+
 [node name="Dash" parent="." instance=ExtResource("2_avu34")]
 
 [node name="ASprite" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_6h27x")
+position = Vector2(11, -18)
 scale = Vector2(3.916, 3.916)
 frames = ExtResource("2_e5lub")
-animation = &"static_left"
+animation = &"nuevo_estatico"
 frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CapsuleShape2D_qugxq")
