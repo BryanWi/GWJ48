@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2800odyocs7p"]
+[gd_scene load_steps=7 format=3 uid="uid://c2800odyocs7p"]
 
 [ext_resource type="Script" path="res://Character/character.gd" id="1_n5hk2"]
+[ext_resource type="PackedScene" uid="uid://cax72ahkg0h6d" path="res://Character/Habilities/dash.tscn" id="2_avu34"]
 [ext_resource type="SpriteFrames" uid="uid://bmtx8708h0p4r" path="res://Character/Sprites/character_frames.tres" id="2_e5lub"]
 [ext_resource type="Shader" path="res://Character/Sprites/character_shader.gdshader" id="2_n6rcf"]
 
@@ -14,11 +15,14 @@ height = 64.0
 [node name="Character" type="CharacterBody2D"]
 script = ExtResource("1_n5hk2")
 
+[node name="Dash" parent="." instance=ExtResource("2_avu34")]
+
 [node name="ASprite" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_6h27x")
 scale = Vector2(3.916, 3.916)
 frames = ExtResource("2_e5lub")
 animation = &"static_left"
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -2,22 +2,28 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+const dash_duration = 0.4
+const dash_boost = 3 #% extra de velocidad aplicado a la velocidad base
+
+
 @onready var aSprite:AnimatedSprite2D = $ASprite
+@onready var dash = $Dash
+
+
+#Esta variable se usa para saber cuál animación de reposo usar (derecha o izquierda)
 var last_direction:Vector2 = Vector2.ZERO
-# Get the gravity from the project settings to be synced with RigidDynamicBody nodes.
-var gravity = 0 #ProjectSettings.get_setting("physics/2d/default_gravity")
 
-
-func _physics_process(delta):
-	# Se removió la gravedad ya que es un top_botom
+func _physics_process(_delta):
 	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	#var direction = Input.get_axis("ui_left", "ui_right")
+	if Input.is_action_just_pressed("dash") and dash.can_dash and !dash.is_dashing():
+		dash.start_dash(dash_duration)
+	
+	
+	#Se consiguen los inputs para general el vector de dirección de movimiento
 	var direction = Input.get_vector("left","right","forward","backward")
-	if direction:
+	if direction: #Animaciones en movimiento
 		#cuando hay movimiento
-		velocity = direction * SPEED
+		velocity = direction * SPEED + (direction*SPEED*dash_boost if dash.is_dashing() else Vector2.ZERO)
 		
 		if direction.x >0:
 			aSprite.animation = "walk_right"
@@ -29,7 +35,7 @@ func _physics_process(delta):
 			aSprite.animation = "walk_up"
 		
 		last_direction = direction
-	else:
+	else:  #Animaciones estáticas
 		if last_direction.x < 0:
 			aSprite.animation = "static_left"
 		else:

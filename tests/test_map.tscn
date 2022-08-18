@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b4w6lmoelbdqc"]
+[gd_scene load_steps=9 format=3 uid="uid://b4w6lmoelbdqc"]
 
 [ext_resource type="TileSet" uid="uid://cidvjcgws2bb2" path="res://map/tiles/tileset_1.tres" id="1_iurh4"]
 [ext_resource type="PackedScene" uid="uid://c2800odyocs7p" path="res://Character/character.tscn" id="1_kmc0d"]
 [ext_resource type="Texture2D" uid="uid://qimwn7grp2pq" path="res://map/tilesOG/tileset_interior.png" id="2_j3y7b"]
 [ext_resource type="Texture2D" uid="uid://bcqqeww6337mm" path="res://map/tilesOG/paredes_interior_32x32_3_.png" id="3_k55r6"]
+[ext_resource type="PackedScene" uid="uid://bxefp5rftfvop" path="res://Character/Habilities/dash/dash_ghost.tscn" id="5_arwjv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lm1kg"]
 texture = ExtResource("2_j3y7b")
@@ -60,3 +61,6 @@ position = Vector2(1653, -964)
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
 current = true
+
+[node name="DashGhost" parent="." instance=ExtResource("5_arwjv")]
+position = Vector2(1782, -969)
