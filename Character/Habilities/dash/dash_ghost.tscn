@@ -1,11 +1,8 @@
 [gd_scene load_steps=3 format=3 uid="uid://bxefp5rftfvop"]
 
+[ext_resource type="Texture2D" uid="uid://uh8803wwp4i2" path="res://icon.png" id="1_52bom"]
 [ext_resource type="Script" path="res://Character/Habilities/dash/dash_ghost.gd" id="1_eqd2y"]
-[ext_resource type="Texture2D" uid="uid://dyyjs3tvqpe1v" path="res://assets/enemigo1/small_shadow.png" id="2_xuxue"]
 
 [node name="DashGhost" type="Sprite2D"]
+texture = ExtResource("1_52bom")
 script = ExtResource("1_eqd2y")
-
-[node name="SmallShadow" type="Sprite2D" parent="."]
-position = Vector2(54, 25)
-texture = ExtResource("2_xuxue")

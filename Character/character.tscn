@@ -31,7 +31,6 @@ position = Vector2(11, -18)
 scale = Vector2(3.916, 3.916)
 frames = ExtResource("2_e5lub")
 animation = &"nuevo_estatico"
-frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
