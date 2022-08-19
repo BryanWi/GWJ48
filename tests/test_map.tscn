@@ -28,6 +28,7 @@ layer_0/tile_data = PackedInt32Array(-3800997, 0, 0, -3800996, 0, 0, -3735460, 0
 
 [node name="Character" parent="." instance=ExtResource("1_kmc0d")]
 position = Vector2(1653, -964)
+z_index = 1
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
 current = true

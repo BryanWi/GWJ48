@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-const dash_duration = 0.4
+const SPEED = 270.0
+#const JUMP_VELOCITY = -400.0
+const dash_duration = 0.2
 const dash_boost = 3 #% extra de velocidad aplicado a la velocidad base
+
 
 
 @onready var aSprite:AnimatedSprite2D = $ASprite
@@ -16,7 +17,7 @@ var last_direction:Vector2 = Vector2.ZERO
 func _physics_process(_delta):
 	
 	if Input.is_action_just_pressed("dash") and dash.can_dash and !dash.is_dashing():
-		dash.start_dash(dash_duration)
+		dash.start_dash(aSprite,dash_duration)
 	
 	
 	#Se consiguen los inputs para general el vector de dirección de movimiento

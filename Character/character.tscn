@@ -3,10 +3,30 @@
 [ext_resource type="Script" path="res://Character/character.gd" id="1_n5hk2"]
 [ext_resource type="PackedScene" uid="uid://cax72ahkg0h6d" path="res://Character/Habilities/dash.tscn" id="2_avu34"]
 [ext_resource type="SpriteFrames" uid="uid://bmtx8708h0p4r" path="res://Character/Sprites/character_frames.tres" id="2_e5lub"]
-[ext_resource type="Shader" path="res://Character/Sprites/character_shader.gdshader" id="2_n6rcf"]
+
+[sub_resource type="Shader" id="Shader_y3hk5"]
+code = "shader_type canvas_item;
+
+uniform bool whiten = false;
+uniform float mix_weight = 1.0;
+
+void fragment() {
+	// Place fragmecnt code here.
+	vec4 texture_color = texture(TEXTURE, UV);
+	if (whiten){
+		vec3 white = vec3(1,1,1);
+		vec3 whitened_texture_rgb = mix(texture_color.rgb,white,mix_weight);
+		COLOR = vec4(whitened_texture_rgb, texture_color.a);
+	} else {
+		COLOR = texture_color;
+	}
+}
+"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6h27x"]
-shader = ExtResource("2_n6rcf")
+shader = SubResource("Shader_y3hk5")
+mix_weight = 1.0
+whiten = false
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qugxq"]
 radius = 32.0
@@ -27,10 +47,10 @@ color = Color(1, 0, 0.921569, 1)
 
 [node name="ASprite" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_6h27x")
-position = Vector2(11, -18)
-scale = Vector2(3.916, 3.916)
+scale = Vector2(4, 4)
 frames = ExtResource("2_e5lub")
 animation = &"nuevo_estatico"
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
