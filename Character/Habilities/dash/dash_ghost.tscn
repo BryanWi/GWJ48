@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxefp5rftfvop"]
+
+[ext_resource type="Script" path="res://Character/Habilities/dash/dash_ghost.gd" id="1_eqd2y"]
+[ext_resource type="Shader" path="res://Character/Habilities/dash/dash_ghost.gdshader" id="1_ht2uv"]
+[ext_resource type="SpriteFrames" uid="uid://bmtx8708h0p4r" path="res://Character/Sprites/character_frames.tres" id="2_rcem8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1s3pl"]
+shader = ExtResource("1_ht2uv")
+mix_weight = 0.9
+whiten = true
+
+[node name="DashGhost" type="AnimatedSprite2D"]
+material = SubResource("ShaderMaterial_1s3pl")
+position = Vector2(-1, 0)
+scale = Vector2(4, 4)
+y_sort_enabled = true
+frames = ExtResource("2_rcem8")
+script = ExtResource("1_eqd2y")
