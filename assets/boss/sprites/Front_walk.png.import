@@ -1,9 +1,9 @@
 [remap]
 
 importer="texture"
-type="CompressedTexture2D"
+type="StreamTexture2D"
 uid="uid://bd4twdt2uf22k"
-path="res://.godot/imported/Front_walk.png-d646a9a470d15d59747a4d37f86343f6.ctex"
+path="res://.godot/imported/Front_walk.png-d646a9a470d15d59747a4d37f86343f6.stex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/boss/sprites/Front_walk.png"
-dest_files=["res://.godot/imported/Front_walk.png-d646a9a470d15d59747a4d37f86343f6.ctex"]
+dest_files=["res://.godot/imported/Front_walk.png-d646a9a470d15d59747a4d37f86343f6.stex"]
 
 [params]
 
@@ -21,6 +21,7 @@ compress/hdr_compression=1
 compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
+compress/streamed=false
 mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
@@ -29,6 +30,5 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1

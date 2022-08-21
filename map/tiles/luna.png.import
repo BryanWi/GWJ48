@@ -1,9 +1,9 @@
 [remap]
 
 importer="texture"
-type="CompressedTexture2D"
+type="StreamTexture2D"
 uid="uid://fiqahvg3o2v"
-path="res://.godot/imported/luna.png-4a99caf713cad067fdffb008a79c1ee3.ctex"
+path="res://.godot/imported/luna.png-4a99caf713cad067fdffb008a79c1ee3.stex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://map/tiles/luna.png"
-dest_files=["res://.godot/imported/luna.png-4a99caf713cad067fdffb008a79c1ee3.ctex"]
+dest_files=["res://.godot/imported/luna.png-4a99caf713cad067fdffb008a79c1ee3.stex"]
 
 [params]
 
@@ -21,6 +21,7 @@ compress/hdr_compression=1
 compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
+compress/streamed=false
 mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
@@ -29,6 +30,5 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
