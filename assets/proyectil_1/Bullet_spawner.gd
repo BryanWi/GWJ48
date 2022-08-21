@@ -10,14 +10,13 @@ var health:float = 100
 @export var spawn_point_count = 4
 @export var radius = 15
 
-@onready var label:Label = $Label
+
 @onready var shoot_timer = $ShootTimer
 @onready var rotator:Node2D = $Rotator
 
 func _ready():
 	var step = 2 * PI / spawn_point_count
-	label.text = str(health)
-	
+		
 	for i in range(spawn_point_count):
 		var spawn_point = Node2D.new()
 		var pos = Vector2(radius, 0).rotated(step*i)
@@ -45,7 +44,7 @@ func _on_shoot_timer_timeout():
 
 func take_damage(damage):
 	health -= damage
-	label.text = str(health)
+	
 	if health <= 0:
 		queue_free()
 		pass

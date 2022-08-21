@@ -1,11 +1,55 @@
-[gd_scene load_steps=2 format=3 uid="uid://duy515fmpg1si"]
+[gd_scene load_steps=5 format=3 uid="uid://duy515fmpg1si"]
 
 [ext_resource type="SpriteFrames" uid="uid://cvvm657ui0p45" path="res://assets/boss/sprites/boss.tres" id="1_nlmnh"]
+[ext_resource type="Script" path="res://assets/boss/boss.gd" id="1_u3vcb"]
+[ext_resource type="PackedScene" uid="uid://co8l02hirkg04" path="res://assets/proyectil_1/bullet_spawer.tscn" id="3_an4oj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5flik"]
+radius = 21.0
+height = 104.0
 
 [node name="boss" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_u3vcb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 frames = ExtResource("1_nlmnh")
-animation = &"boss_back"
-frame = 6
+animation = &"boss_right"
+frame = 1
 playing = true
+
+[node name="bullet_pattern_1" parent="." instance=ExtResource("3_an4oj")]
+shooter_timer_wait_time = 0.5
+spawn_point_count = 3
+
+[node name="bullet_pattern_2" parent="." instance=ExtResource("3_an4oj")]
+shooter_timer_wait_time = 5.0
+spawn_point_count = 20
+
+[node name="bullet_pattern_3" parent="." instance=ExtResource("3_an4oj")]
+rotate_speed = 50
+shooter_timer_wait_time = 2.0
+spawn_point_count = 6
+
+[node name="bullet_pattern_4" parent="." instance=ExtResource("3_an4oj")]
+rotate_speed = 50
+shooter_timer_wait_time = 0.3
+spawn_point_count = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -80.0
+offset_right = 20.0
+offset_bottom = -57.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource("CapsuleShape2D_5flik")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]

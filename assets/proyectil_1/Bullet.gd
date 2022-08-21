@@ -30,5 +30,6 @@ func _on_area_2d_body_entered(body):
 
 
 func _on_area_2d_area_entered(area):
-	if area.is_in_group("atack"):
+	if area.is_in_group("atack") or area.is_in_group("limit"):
 		queue_free()
+

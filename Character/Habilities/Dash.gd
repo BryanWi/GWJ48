@@ -5,7 +5,7 @@ const ghost_scene = preload("res://Character/Habilities/dash/dash_ghost.tscn")
 @onready var duration_timer:Timer = $durationTimer
 @onready var ghost_timer:Timer = $GhostTimer
 
-const dash_delay = 1
+const dash_delay = 0.5
 var can_dash = true
 var sprite:AnimatedSprite2D
 
@@ -29,7 +29,8 @@ func instance_ghost():
 	ghost.frames = sprite.frames
 	ghost.animation = sprite.animation
 	ghost.frame = sprite.frame
-	ghost.scale = Vector2(4,4)
+	ghost.scale = Vector2(2.1,2.1)
+	#ghost.scale = get_parent().aSprite.scale
 	ghost.flip_h=sprite.flip_h
 	
 	

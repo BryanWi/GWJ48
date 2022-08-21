@@ -47,7 +47,7 @@ material = SubResource("ShaderMaterial_6h27x")
 scale = Vector2(3, 3)
 frames = ExtResource("2_e5lub")
 animation = &"ataque_derecho"
-frame = 1
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

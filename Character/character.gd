@@ -3,9 +3,9 @@ extends CharacterBody2D
 
 const SPEED = 270.0
 #const JUMP_VELOCITY = -400.0
-const dash_duration = 0.15
-const dash_boost = 3 #% extra de velocidad aplicado a la velocidad base
-const damage = 50
+const dash_duration = 0.1
+const dash_boost = 4 #% extra de velocidad aplicado a la velocidad base
+const damage = 36
 
 var health = 100
 
@@ -87,12 +87,12 @@ func take_damage(get_damage):
 		inmune_timer.start()
 		label.text = str(health)
 	if health <= 0:
-		get_tree().quit()
+		
 		restart()
 
 
 func restart():
-	pass
+	get_tree().change_scene("res://Scenes/main_menu.tscn")
 
 
 func _on_hitbox_body_entered(body):

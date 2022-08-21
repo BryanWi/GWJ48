@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://co8l02hirkg04"]
 
-[ext_resource type="Script" path="res://assets/enemigo1/enemy_1.gd" id="1_bne1g"]
+[ext_resource type="Script" path="res://assets/proyectil_1/Bullet_spawner.gd" id="1_a7me5"]
 
 [node name="BulletSpawner" type="Node2D"]
-script = ExtResource("1_bne1g")
+script = ExtResource("1_a7me5")
 
 [node name="ShootTimer" type="Timer" parent="."]
 
