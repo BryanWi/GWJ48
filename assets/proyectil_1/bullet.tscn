@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck3ivu2dcc1xt"]
+
+[ext_resource type="Script" path="res://assets/proyectil_1/Bullet.gd" id="1_hftny"]
+[ext_resource type="Texture2D" uid="uid://ck4d5iknl0ef7" path="res://assets/proyectil_esfera/esfera2.png" id="2_u24xw"]
+
+[node name="Bullet" type="Node2D"]
+script = ExtResource("1_hftny")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -1.5708
+texture = ExtResource("2_u24xw")
+
+[node name="KillTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="KillTimer" to="." method="_on_kill_timer_timeout"]

@@ -12,7 +12,7 @@ whiten = true
 [node name="DashGhost" type="AnimatedSprite2D"]
 material = SubResource("ShaderMaterial_1s3pl")
 position = Vector2(-1, 0)
-scale = Vector2(4, 4)
+scale = Vector2(3, 3)
 y_sort_enabled = true
 frames = ExtResource("2_rcem8")
 script = ExtResource("1_eqd2y")

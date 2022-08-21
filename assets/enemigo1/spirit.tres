@@ -1,0 +1,49 @@
+[gd_resource type="SpriteFrames" load_steps=11 format=3 uid="uid://d0yk56ud1ikjw"]
+
+[ext_resource type="Texture2D" uid="uid://dyyjs3tvqpe1v" path="res://assets/enemigo1/small_shadow.png" id="1_73un7"]
+[ext_resource type="Texture2D" uid="uid://d2etc5srl8p0" path="res://assets/enemigo1/spirit_enemy.png" id="2_r04m4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4s4w"]
+atlas = ExtResource("1_73un7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tt1kf"]
+atlas = ExtResource("1_73un7")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7du0q"]
+atlas = ExtResource("1_73un7")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i63ef"]
+atlas = ExtResource("2_r04m4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7f8xm"]
+atlas = ExtResource("2_r04m4")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tg77y"]
+atlas = ExtResource("2_r04m4")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8ocb"]
+atlas = ExtResource("2_r04m4")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1d0f"]
+atlas = ExtResource("2_r04m4")
+region = Rect2(128, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [SubResource("AtlasTexture_w4s4w"), SubResource("AtlasTexture_tt1kf"), SubResource("AtlasTexture_7du0q")],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [SubResource("AtlasTexture_i63ef"), SubResource("AtlasTexture_7f8xm"), SubResource("AtlasTexture_tg77y"), SubResource("AtlasTexture_g8ocb"), SubResource("AtlasTexture_g1d0f")],
+"loop": true,
+"name": &"shoot",
+"speed": 5.0
+}]

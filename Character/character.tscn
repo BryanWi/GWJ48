@@ -33,6 +33,7 @@ radius = 32.0
 height = 64.0
 
 [node name="Character" type="CharacterBody2D"]
+position = Vector2(0, -1)
 script = ExtResource("1_n5hk2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -47,12 +48,10 @@ color = Color(1, 0, 0.921569, 1)
 
 [node name="ASprite" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_6h27x")
-scale = Vector2(4, 4)
+scale = Vector2(3, 3)
 frames = ExtResource("2_e5lub")
 animation = &"nuevo_estatico"
-frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CapsuleShape2D_qugxq")
