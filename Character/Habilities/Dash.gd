@@ -5,13 +5,13 @@ const ghost_scene = preload("res://Character/Habilities/dash/dash_ghost.tscn")
 @onready var duration_timer:Timer = $durationTimer
 @onready var ghost_timer:Timer = $GhostTimer
 
-const dash_delay = 0.1
+const dash_delay = 1
 var can_dash = true
 var sprite:AnimatedSprite2D
 
 
-func start_dash(sprite:AnimatedSprite2D,duration):
-	self.sprite = sprite
+func start_dash(sprite2:AnimatedSprite2D,duration):
+	self.sprite = sprite2
 	sprite.material.set_shader_param("mix_weight",0.7)
 	sprite.material.set_shader_param("whiten",true)
 	

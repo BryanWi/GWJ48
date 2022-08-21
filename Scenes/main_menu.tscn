@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmieltqdjbm3w"]
+
+[ext_resource type="Texture2D" uid="uid://8f7o3hbtqgl1" path="res://UI/img/main_menu_button.png" id="1_tda88"]
+[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_u065r"]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_u065r")
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.5
+offset_top = -29.0
+offset_right = 75.5
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start"
+metadata/_edit_layout_mode = 1
+
+[node name="MainMenuButton" type="Sprite2D" parent="Button"]
+position = Vector2(71, 26)
+scale = Vector2(3.45711, 5.6)
+texture = ExtResource("1_tda88")
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

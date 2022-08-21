@@ -3,7 +3,8 @@
 [ext_resource type="SpriteFrames" uid="uid://d0yk56ud1ikjw" path="res://assets/enemigo1/spirit.tres" id="1_cycbj"]
 [ext_resource type="Script" path="res://assets/enemigo1/enemy_1.gd" id="1_kejl3"]
 
-[node name="Enemy1" type="Node2D"]
+[node name="Enemy1" type="Node2D" groups=["enemy"]]
+visible = false
 script = ExtResource("1_kejl3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -14,5 +15,9 @@ playing = true
 [node name="ShootTimer" type="Timer" parent="."]
 
 [node name="Rotator" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

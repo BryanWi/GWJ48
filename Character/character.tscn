@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2800odyocs7p"]
+[gd_scene load_steps=8 format=3 uid="uid://c2800odyocs7p"]
 
 [ext_resource type="Script" path="res://Character/character.gd" id="1_n5hk2"]
 [ext_resource type="PackedScene" uid="uid://cax72ahkg0h6d" path="res://Character/Habilities/dash.tscn" id="2_avu34"]
@@ -29,20 +29,16 @@ mix_weight = 1.0
 whiten = false
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qugxq"]
-radius = 32.0
-height = 64.0
+radius = 16.0
+height = 46.0
 
-[node name="Character" type="CharacterBody2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4kekx"]
+radius = 15.0
+height = 84.0
+
+[node name="Character" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(0, -1)
 script = ExtResource("1_n5hk2")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-offset_left = -25.0
-offset_top = -54.0
-offset_right = 44.0
-offset_bottom = 42.0
-color = Color(1, 0, 0.921569, 1)
 
 [node name="Dash" parent="." instance=ExtResource("2_avu34")]
 
@@ -50,8 +46,42 @@ color = Color(1, 0, 0.921569, 1)
 material = SubResource("ShaderMaterial_6h27x")
 scale = Vector2(3, 3)
 frames = ExtResource("2_e5lub")
-animation = &"nuevo_estatico"
+animation = &"ataque_derecho"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_qugxq")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -52.0
+offset_right = 20.0
+offset_bottom = -29.0
+text = "texto"
+
+[node name="AtackTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="InmuneTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="hitboxPivot" type="Position2D" parent="."]
+
+[node name="hitbox" type="Area2D" parent="hitboxPivot" groups=["atack"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitboxPivot/hitbox"]
+position = Vector2(40, 0)
+shape = SubResource("CapsuleShape2D_4kekx")
+disabled = true
+
+[node name="ColorRect" type="ColorRect" parent="hitboxPivot"]
+offset_left = 28.0
+offset_top = -29.0
+offset_right = 52.0
+offset_bottom = 26.0
+color = Color(1, 0, 0.921569, 1)
+
+[connection signal="timeout" from="AtackTimer" to="." method="_on_atack_timer_timeout"]
+[connection signal="body_entered" from="hitboxPivot/hitbox" to="." method="_on_hitbox_body_entered"]

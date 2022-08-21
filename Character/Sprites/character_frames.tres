@@ -1,5 +1,6 @@
-[gd_resource type="SpriteFrames" load_steps=45 format=3 uid="uid://bmtx8708h0p4r"]
+[gd_resource type="SpriteFrames" load_steps=52 format=3 uid="uid://bmtx8708h0p4r"]
 
+[ext_resource type="Texture2D" uid="uid://pqw6x5b3i6qg" path="res://Character/Sprites/atack_right.png" id="1_hyuga"]
 [ext_resource type="Texture2D" uid="uid://dxf24docncmu8" path="res://Character/Sprites/animacion_camiando_derecha_3_32x32-Sheet.png" id="2_4p2ob"]
 [ext_resource type="Texture2D" uid="uid://5jhijq4l0cw0" path="res://Character/Sprites/static-left.png" id="2_q3pww"]
 [ext_resource type="Texture2D" uid="uid://b6tpjai3gbk05" path="res://Character/Sprites/static-right.png" id="3_ccj43"]
@@ -8,6 +9,30 @@
 [ext_resource type="Texture2D" uid="uid://3y7148ubn3s5" path="res://Character/Sprites/walk-left.png" id="5_u2doc"]
 [ext_resource type="Texture2D" uid="uid://dektja7exev3o" path="res://Character/Sprites/walk-right.png" id="6_0qkto"]
 [ext_resource type="Texture2D" uid="uid://c3qg1k1ukfetu" path="res://Character/Sprites/forward.png" id="7_5j40e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdjop"]
+atlas = ExtResource("1_hyuga")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eekkm"]
+atlas = ExtResource("1_hyuga")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0fal"]
+atlas = ExtResource("1_hyuga")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8fx3"]
+atlas = ExtResource("1_hyuga")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhkqk"]
+atlas = ExtResource("1_hyuga")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8sqs"]
+atlas = ExtResource("1_hyuga")
+region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dwf4f"]
 atlas = ExtResource("3_ccj43")
@@ -155,6 +180,11 @@ region = Rect2(96, 0, 32, 32)
 
 [resource]
 animations = [{
+"frames": [SubResource("AtlasTexture_wdjop"), SubResource("AtlasTexture_eekkm"), SubResource("AtlasTexture_d0fal"), SubResource("AtlasTexture_b8fx3"), SubResource("AtlasTexture_hhkqk"), SubResource("AtlasTexture_h8sqs")],
+"loop": true,
+"name": &"ataque_derecho",
+"speed": 12.0
+}, {
 "frames": [SubResource("AtlasTexture_dwf4f"), SubResource("AtlasTexture_dnooo"), SubResource("AtlasTexture_35y51"), SubResource("AtlasTexture_y70g1")],
 "loop": true,
 "name": &"default",

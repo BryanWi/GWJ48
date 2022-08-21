@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://ck3ivu2dcc1xt"]
+[gd_scene load_steps=4 format=3 uid="uid://ck3ivu2dcc1xt"]
 
 [ext_resource type="Script" path="res://assets/proyectil_1/Bullet.gd" id="1_hftny"]
 [ext_resource type="Texture2D" uid="uid://ck4d5iknl0ef7" path="res://assets/proyectil_esfera/esfera2.png" id="2_u24xw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n08kp"]
+radius = 5.0
 
 [node name="Bullet" type="Node2D"]
 script = ExtResource("1_hftny")
@@ -13,4 +16,11 @@ texture = ExtResource("2_u24xw")
 [node name="KillTimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_n08kp")
+
 [connection signal="timeout" from="KillTimer" to="." method="_on_kill_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
