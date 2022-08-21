@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cueywtnqa66ce" path="res://map/tilesOG/paredes_muro.png" id="3_3d6wh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wil12"]
-resource_name = "Moon"
+resource_name = "null"
 texture = ExtResource("1_qfd2r")
 margins = Vector2i(3, 3)
 texture_region_size = Vector2i(32, 32)

@@ -28,4 +28,23 @@ grow_vertical = 2
 text = "Start"
 metadata/_edit_layout_mode = 1
 
+[node name="Label" type="Label" parent="."]
+offset_left = 5.0
+offset_top = 256.0
+offset_right = 229.0
+offset_bottom = 359.0
+theme_override_font_sizes/font_size = 15
+text = "Controls​​:
+player movement: W A S D ​
+atack: left click or F
+dash: spacebar
+"
+
+[node name="Label" type="Label" parent="Label"]
+offset_left = 156.0
+offset_top = -190.0
+offset_right = 196.0
+offset_bottom = -167.0
+text = "MOONGEON"
+
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
