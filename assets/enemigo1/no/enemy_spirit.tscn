@@ -10,3 +10,9 @@ frames = ExtResource("1_upenl")
 playing = true
 
 [node name="BulletSpawner" parent="." instance=ExtResource("2_nfgcc")]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -18.0
+offset_top = -33.0
+offset_right = 22.0
+offset_bottom = -10.0

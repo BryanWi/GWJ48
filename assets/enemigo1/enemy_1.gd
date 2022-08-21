@@ -10,14 +10,13 @@ var health:float = 100
 @export var radius = 15
 
 @onready var label:Label = $Label
-
 @onready var shoot_timer = $ShootTimer
 @onready var rotator:Node2D = $Rotator
 
 func _ready():
 	var step = 2 * PI / spawn_point_count
 	label.text = str(health)
-	#label.text = str(health)
+	
 	for i in range(spawn_point_count):
 		var spawn_point = Node2D.new()
 		var pos = Vector2(radius, 0).rotated(step*i)
@@ -46,6 +45,8 @@ func take_damage(damage):
 	health -= damage
 	label.text = str(health)
 	if health <= 0:
-		get_tree().quit()
+		queue_free()
+		pass
+		#get_tree().quit()
 		#restart()
 	

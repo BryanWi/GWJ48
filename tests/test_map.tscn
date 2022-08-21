@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cuc5t13xxavfa"]
+[gd_scene load_steps=5 format=3 uid="uid://cuc5t13xxavfa"]
 
 [ext_resource type="TileSet" uid="uid://camx0mgum5mqv" path="res://map/tiles/tileset_1.tres" id="1_iurh4"]
 [ext_resource type="PackedScene" uid="uid://c2800odyocs7p" path="res://Character/character.tscn" id="1_kmc0d"]
 [ext_resource type="TileSet" uid="uid://fsytfkn34a8q" path="res://map/tilesOG/og_tiles_interior.tres" id="2_qoinb"]
-[ext_resource type="PackedScene" uid="uid://c18hr8we3fm8b" path="res://assets/enemigo1/no/enemy_spirit.tscn" id="4_ggskn"]
 [ext_resource type="PackedScene" uid="uid://d2hvyvymh4hb5" path="res://assets/enemigo1/enemy_1.tscn" id="4_umb0f"]
 
 [node name="Test map" type="Node2D"]
@@ -36,13 +35,12 @@ z_index = 1
 position = Vector2(179, -41)
 current = true
 
-[node name="Enemy_spirit" parent="." instance=ExtResource("4_ggskn")]
-position = Vector2(2319, -637)
-scale = Vector2(2, 2)
-
 [node name="Enemy1" parent="." instance=ExtResource("4_umb0f")]
 position = Vector2(2354, -948)
 scale = Vector2(2, 2)
 rotate_speed = 500
 shooter_timer_wait_time = 2.0
 spawn_point_count = 60
+
+[node name="Enemy2" parent="." instance=ExtResource("4_umb0f")]
+position = Vector2(2282, -643)
