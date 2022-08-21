@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://camx0mgum5mqv" path="res://map/tiles/tileset_1.tres" id="1_iurh4"]
 [ext_resource type="PackedScene" uid="uid://c2800odyocs7p" path="res://Character/character.tscn" id="1_kmc0d"]
 [ext_resource type="TileSet" uid="uid://fsytfkn34a8q" path="res://map/tilesOG/og_tiles_interior.tres" id="2_qoinb"]
-[ext_resource type="PackedScene" uid="uid://bxefp5rftfvop" path="res://Character/Habilities/dash/dash_ghost.tscn" id="5_arwjv"]
+[ext_resource type="PackedScene" uid="uid://c18hr8we3fm8b" path="res://assets/enemigo1/no/enemy_spirit.tscn" id="4_ggskn"]
 
 [node name="Test map" type="Node2D"]
 
@@ -33,5 +33,6 @@ z_index = 1
 [node name="Camera2D" type="Camera2D" parent="Character"]
 current = true
 
-[node name="DashGhost" parent="." instance=ExtResource("5_arwjv")]
-position = Vector2(1782, -969)
+[node name="Enemy_spirit" parent="." instance=ExtResource("4_ggskn")]
+position = Vector2(1849, -952)
+scale = Vector2(2, 2)
